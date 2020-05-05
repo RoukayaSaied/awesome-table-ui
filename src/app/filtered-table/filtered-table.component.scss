@@ -1,0 +1,32 @@
+
+.table-container {
+  width: 900px;
+}
+
+.filter-icon {
+  transform: scale(1.5);
+}
+
+.right-button {
+  float: right;
+}
+
+mat-form-field {
+  font-size: 15px;
+  padding-top: 20px;
+}
+
+
+mat-card {
+  padding: 10px 20px;
+  height: 80px;
+}
+
+button {
+  height: 40px;
+  align-items: center;
+  mat-icon{
+    margin: 0 5px;
+  }
+}
+//#F4F7FC
