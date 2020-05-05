@@ -1,0 +1,11 @@
+@mixin flexible() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  @include flexible();
+  height: 100%;
+  background-color: #DAE1EC;
+}
