@@ -1,6 +1,6 @@
 
 .table-container {
-  width: 900px;
+  width: 1100px;
 }
 
 .filter-icon {
@@ -27,19 +27,31 @@ button {
   height: 40px;
   align-items: center;
   mat-icon{
-    margin: 0 5px;
+    margin-right: 5px;
   }
 }
 
 table {
   width: 100%;
+  table-layout: fixed;
+  border-spacing: 10px;
 }
 
+th, td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 .mat-row:nth-child(even){
-  background-color: #F4F7FC;
+  background-color: white;
 }
 
 .mat-row:nth-child(odd){
-  background-color: white;
+  background-color: #F4F7FC;
+}
+
+
+td mat-icon {
+  color: #DAE1EC;
 }

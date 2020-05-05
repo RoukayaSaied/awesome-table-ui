@@ -25,51 +25,73 @@
 
 
     <table [dataSource]="dataSource" mat-table matSort class="mat-elevation-z8">
+      <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef width ="8%">
+          <mat-checkbox>
+          </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-checkbox >
+          </mat-checkbox>
+        </td>
+      </ng-container>
+
       <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>NAME</th>
-        <td mat-cell *matCellDef="let row" data-column-name>{{row.name}}
+        <th mat-header-cell *matHeaderCellDef mat-sort-header  width ="13%">NAME</th>
+        <td mat-cell *matCellDef="let row" data-column-name><strong>{{row.name}}</strong>
         </td>
       </ng-container>
 
       <ng-container matColumnDef="description">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>DESCRIPTION</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header  width ="13%">DESCRIPTION</th>
         <td mat-cell *matCellDef="let row" data-column-name>{{row.description}}
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="rate">
+      <ng-container matColumnDef="rate" width ="5%">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>RATE</th>
-        <td mat-cell *matCellDef="let row" data-column-name>{{row.rate}}
+        <td mat-cell *matCellDef="let row" data-column-name >{{row.rate}}
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="balance">
+      <ng-container matColumnDef="balance" width ="5%">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>BALANCE</th>
-        <td mat-cell *matCellDef="let row" data-column-name>{{row.balance}}
+        <td mat-cell *matCellDef="let row" data-column-name [ngStyle]="{'color': row.balance > 10 ? 'red' : 'green'}">{{row.balance}}
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="deposit">
+      <ng-container matColumnDef="deposit" width ="5%">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>DEPOSIT</th>
         <td mat-cell *matCellDef="let row" data-column-name>{{row.deposit}}
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="status">
+      <ng-container matColumnDef="status" width ="5%">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>STATUS</th>
         <td mat-cell *matCellDef="let row" data-column-name>{{row.status}}
         </td>
       </ng-container>
 
-      <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>..</th>
-        <td mat-cell *matCellDef="let row" data-column-name>{{row.action}}
+      <ng-container matColumnDef="actions" width ="15%">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header><mat-icon>more_horiz</mat-icon></th>
+        <td mat-cell *matCellDef data-column-name>
+          <button mat-icon-button>
+            <mat-icon >edit</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon >delete</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon >more_horiz</mat-icon>
+          </button>
         </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+
+  <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
 
 </div>
 

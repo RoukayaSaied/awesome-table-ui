@@ -1,8 +1,9 @@
 export class CUSTOMER {
-  name : string;
-  description : string;
-  rate : string;
-  balance : string;
-  deposit : string;
-  status : string;
+  id: number;
+  name: string;
+  description: string;
+  rate: number;
+  balance: number;
+  deposit: number;
+  status: string;
 }
