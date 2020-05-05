@@ -21,5 +21,55 @@
       Add Customer
     </button>
   </mat-card>
+
+
+
+    <table [dataSource]="dataSource" mat-table matSort class="mat-elevation-z8">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>NAME</th>
+        <td mat-cell *matCellDef="let row" data-column-name>{{row.name}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>DESCRIPTION</th>
+        <td mat-cell *matCellDef="let row" data-column-name>{{row.description}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="rate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>RATE</th>
+        <td mat-cell *matCellDef="let row" data-column-name>{{row.rate}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="balance">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>BALANCE</th>
+        <td mat-cell *matCellDef="let row" data-column-name>{{row.balance}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="deposit">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>DEPOSIT</th>
+        <td mat-cell *matCellDef="let row" data-column-name>{{row.deposit}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>STATUS</th>
+        <td mat-cell *matCellDef="let row" data-column-name>{{row.status}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>..</th>
+        <td mat-cell *matCellDef="let row" data-column-name>{{row.action}}
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
 </div>
 

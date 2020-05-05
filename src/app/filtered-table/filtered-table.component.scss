@@ -20,6 +20,7 @@ mat-form-field {
 mat-card {
   padding: 10px 20px;
   height: 80px;
+  background-color: #F4F7FC;
 }
 
 button {
@@ -29,4 +30,16 @@ button {
     margin: 0 5px;
   }
 }
-//#F4F7FC
+
+table {
+  width: 100%;
+}
+
+
+.mat-row:nth-child(even){
+  background-color: #F4F7FC;
+}
+
+.mat-row:nth-child(odd){
+  background-color: white;
+}
