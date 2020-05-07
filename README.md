@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 # awesome-table-ui
-Angular Table Component With HTML &amp; SCSS
+Table Component With Angular Material Design
 =======
 # AwesomeTableUi
 
